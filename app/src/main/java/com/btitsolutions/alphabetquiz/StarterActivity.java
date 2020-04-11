@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 
-import com.google.android.gms.ads.MobileAds;
-
 public class StarterActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnAmharicAlphabet, btnAmharicNumbers, btnEnglishAlphabet, btnEnglishNumber;
     Button btnRateUs, btnSetting;
@@ -22,8 +20,6 @@ public class StarterActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starter);
-
-        MobileAds.initialize(this, "ca-app-pub-8168171128315421~7023220617");
 
         btnRateUs = (Button)findViewById(R.id.btnRateUs);
         btnSetting = (Button)findViewById(R.id.btnSetting);

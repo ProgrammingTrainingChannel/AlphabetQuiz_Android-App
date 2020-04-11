@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -30,7 +27,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     int errorCounter = 0;
 
     SoundPlayer soundPlayer;
-    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +34,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_quiz);
 
         soundPlayer = new SoundPlayer(this);
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-8168171128315421/1143497530");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         btnFirst = (Button)findViewById(R.id.btnFirst);
         btnSecond = (Button)findViewById(R.id.btnSecond);
@@ -255,10 +248,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                     currentRowIndex += 1;
 
                     LoadSingleRow();
-
-                    if (mInterstitialAd.isLoaded()) {
-                        mInterstitialAd.show();
-                    }
                 }
             }
             else{
